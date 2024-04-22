@@ -21,6 +21,11 @@
 
 [sleep.cpp](https://github.com/meshtastic/firmware/blob/250cf16bf8793aefed95b9cedb9c20b2f2e7a2a7/src/sleep.cpp#L78) - Heltec and ESP32C3 may consume more power because Meshtastic does not reduce the CPU clock for this model from 240 MHz to 80 MHz. Leave CPU at full speed during init, but once loop is called switch to low speed (for a 50% power savings)
 
+### Heltec V2 vs. V3
+
+[discourse](https://meshtastic.discourse.group/t/heltec-wifi-lora-32-v3-is-out-will-it-be-supported/6596/12) - normal operation I am measuring a current draw of about 110 mA on the 3.7V line for V3.
+For V2 I am measuring about 60 mA. # suspect there are a bunch of opportunities for power savings on these devices, but ESP32-S3 support in Meshtastic is very fresh. I’m sure we’ll uncover those opportunites as support matures.
+
 ## Devices
 
 | Device | MCU | LoRa | Bluetooth | PSRAM | Commend |
