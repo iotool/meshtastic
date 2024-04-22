@@ -27,7 +27,7 @@ Single node:
 
 Multiple nodes:
 
-* target node can disable Bluetooth and power saving
+* target node can disable Bluetooth and enable power saving
 * indirect monitoring of your target node by other mesh node
 * use Bluetooth MAC of the mesh node to connect your computer
 * use target short node name for select node info 
