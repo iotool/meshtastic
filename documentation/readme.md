@@ -22,7 +22,7 @@ Reduce power consumption - example TLoRa v2.1_1.6 (reduce 50mA to 18mA current c
 * Bluetooth: disabled (use admin channel to change config)
 * LoRa TX power: 20 dBm ~ 100mW (14 dBm ~ 25 mW)
 * LoRa ignore MQTT
-* Power saving: enabled (shutdown 0s)
+* Power saving: enabled (overwrite ADC and duration) 
 * Power ADC multiplier: 1.8 (shutdown at 20% battery)
 * Power duration: shutdown 0s, bluetooth 1s, super 3600, light 3600, minimum 10s
 
