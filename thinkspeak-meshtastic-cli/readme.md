@@ -20,12 +20,14 @@ I use this to monitor my solar powered node during development.
 
 Single node:
 
+* target node has Bluetooth enabled and no power saving
 * direct monitoring of your target node
 * use Bluetooth MAC of the target node to connect your computer
 * use target short node name for select node info 
 
 Multiple nodes:
 
+* target node can disable Bluetooth and power saving
 * indirect monitoring of your target node by other mesh node
 * use Bluetooth MAC of the mesh node to connect your computer
 * use target short node name for select node info 
