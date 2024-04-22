@@ -7,6 +7,7 @@
 | T-Lora 2.1_1.6 | 18mA @5V | Router, PwrSave | 2.2.24 |
 | T-Lora 2.1_1.6 | 18mA @5V | Repeater, PwrSave | 2.2.24 |
 | Heltec V2 | 70mA @5V | Client | 2.2.24 |
+| Heltec V3.1 | 111mA @5V | Client | 2.2.24 |
 | Heltec V3.1 | 108mA @5V | Client | 2.3.4 |
 | Heltec V3.1 | 28mA @5V | Router (PwrSave) | 2.3.4 |
 | Heltec V3.1 | 21mA @5V | Router (PwrMin) | 2.3.4 |
