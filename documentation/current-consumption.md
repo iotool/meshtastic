@@ -43,3 +43,9 @@ Power on for 5 minutes every hour for 1.5mA current consumption or 36mAh per day
 * Shutdown on battery delay (seconds) = uptime (e.g. 300 seconds ~ 5 minutes)
 * ADC multiplier = 0.1 to force shutdown after uptime
 * super deep sleep duration (seconds) = downtime (e.g. 3300 seconds ~ 55 minutes)
+
+Power on for 16 minutes every hour for 5.33mA current consumption or 128mAh per day. 
+
+* Shutdown on battery delay (seconds) = uptime (e.g. 960 seconds ~ 15 minutes)
+* ADC multiplier = 0.1 to force shutdown after uptime
+* super deep sleep duration (seconds) = downtime (e.g. 2640 seconds ~ 44 minutes)
