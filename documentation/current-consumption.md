@@ -49,3 +49,5 @@ Power on for 16 minutes every hour for 5.33mA current consumption or 128mAh per 
 * Shutdown on battery delay (seconds) = uptime (e.g. 960 seconds ~ 15 minutes)
 * ADC multiplier = 0.1 to force shutdown after uptime
 * super deep sleep duration (seconds) = downtime (e.g. 2640 seconds ~ 44 minutes)
+
+A simpler sync for time switching over all  mesh nodes would be an automatic reset at midnight.
