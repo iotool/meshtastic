@@ -27,3 +27,7 @@ Reduce power consumption - example TLoRa v2.1_1.6 (reduce 50mA to 18mA current c
 * Power duration: shutdown 0s, bluetooth 1s, super 3600, light 3600, minimum 10s
 
 The ESB32 consumes a lot of energy and is set to sleep mode as far as possible. For LoRa, only the minimum necessary data packets are re-sent in the mesh.
+
+## Time Synchronization
+
+[Feature Request](https://github.com/meshtastic/firmware/issues/3171) Current Time/Clock Functionality #3171 - it gets it from the app, gps or mesh. You also only need one device with time, it should send the time across the mesh to the other devices and they'll sync up - [Screen.cpp](https://github.com/meshtastic/firmware/blob/250cf16bf8793aefed95b9cedb9c20b2f2e7a2a7/src/graphics/Screen.cpp#L1899)
