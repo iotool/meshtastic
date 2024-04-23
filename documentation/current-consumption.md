@@ -36,4 +36,10 @@ For V2 I am measuring about 60 mA. # suspect there are a bunch of opportunities 
 | Heltec V3.1 | ESP32-S3 | SX1262 | 5 | n/a | |
 | Heltec WST-V3 | ESP32-S3 | SX1262 | 5 | n/a | |
 
+## Interval Time Switching 
 
+Power on for 5 minutes every hour for 1.5mA current consumption or 36mAh per day. 
+
+* Shutdown on battery delay (seconds) = uptime (e.g. 300 seconds ~ 5 minutes)
+* ADC multiplier = 0.1 to force shutdown after uptime
+* super deep sleep duration (seconds) = downtime (e.g. 3300 seconds ~ 55 minutes)
