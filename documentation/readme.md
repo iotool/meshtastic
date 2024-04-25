@@ -31,3 +31,5 @@ The ESB32 consumes a lot of energy and is set to sleep mode as far as possible. 
 ## Time Synchronization
 
 [Feature Request](https://github.com/meshtastic/firmware/issues/3171) Current Time/Clock Functionality #3171 - it gets it from the app, gps or mesh. You also only need one device with time, it should send the time across the mesh to the other devices and they'll sync up - [Screen.cpp](https://github.com/meshtastic/firmware/blob/250cf16bf8793aefed95b9cedb9c20b2f2e7a2a7/src/graphics/Screen.cpp#L1899)
+
+At least 1 node in a private group must have an active GPS in order to generate the system time.
