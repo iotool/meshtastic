@@ -38,16 +38,10 @@ For V2 I am measuring about 60 mA. # suspect there are a bunch of opportunities 
 
 ## Interval Time Switching 
 
-Power on for 5 minutes every hour for 1.5mA current consumption or 36mAh per day. 
+~~Power on for 5 minutes every hour for 1.5mA current consumption or 36mAh per day.~~
 
 * Shutdown on battery delay (seconds) = uptime (e.g. 300 seconds ~ 5 minutes)
 * ADC multiplier = 0.1 to force shutdown after uptime
 * super deep sleep duration (seconds) = downtime (e.g. 3300 seconds ~ 55 minutes)
 
-Power on for 16 minutes every hour for 5.33mA current consumption or 128mAh per day. 
-
-* Shutdown on battery delay (seconds) = uptime (e.g. 960 seconds ~ 15 minutes)
-* ADC multiplier = 0.1 to force shutdown after uptime
-* super deep sleep duration (seconds) = downtime (e.g. 2640 seconds ~ 44 minutes)
-
-A simpler sync for time switching over all  mesh nodes would be an automatic reset at midnight.
+This settings shutdown after 5 minutes, because ADC 0.1 force 0% battery level. But after super deep slepp of 55 minutes the device will immediately shutdown again, without 5 minutes ontime.
