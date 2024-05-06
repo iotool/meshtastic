@@ -31,6 +31,7 @@ For V2 I am measuring about 60 mA. # suspect there are a bunch of opportunities 
 
 | Device | MCU | LoRa | Bluetooth | PSRAM | max. TX | Commend |
 |--------|-----|------|-----------|-------|--------|---------|
+| T-Beam 1.0 | ESP32 | SX1276 | 4.2 | n/a | [20dBm](https://www.elecbee.com/de-23472-T-Beam-v1-0-ESP32-433-868-915Mhz-WiFi-GPS-NEO-6M-18650-WiFi-bluetooth-Board-Module) | |
 | T-Lora 2.1_1.6 | ESP32 | SX1276 | 4.2 | n/a | [14dBm](https://de.aliexpress.com/item/32872078587.html) ~ 25mW | |
 | Heltec V2 | ESP32-D0 | SX1276 | 4.2 | n/a | [19±1dBm](https://resource.heltec.cn/download/Manual%20Old/WiFi%20Lora32Manual.pdf) ~ 79mW | |
 | Heltec V3.1 | ESP32-S3 | SX1262 | 5 | n/a | [21±1dBm](https://heltec.org/project/wifi-lora-32-v3/) ~ 126mW | |
