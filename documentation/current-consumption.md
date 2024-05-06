@@ -29,12 +29,12 @@ For V2 I am measuring about 60 mA. # suspect there are a bunch of opportunities 
 
 ## Devices
 
-| Device | MCU | LoRa | Bluetooth | PSRAM | Commend |
-|--------|-----|------|-----------|-------|---------|
-| T-Lora 2.1_1.6 | ESP32 | SX1276 | 4.2 | n/a | |
-| Heltec V2 | ESP32-D0 | SX1276 | 4.2 | n/a | |
-| Heltec V3.1 | ESP32-S3 | SX1262 | 5 | n/a | |
-| Heltec WST-V3 | ESP32-S3 | SX1262 | 5 | n/a | |
+| Device | MCU | LoRa | Bluetooth | PSRAM | max. TX | Commend |
+|--------|-----|------|-----------|-------|--------|---------|
+| T-Lora 2.1_1.6 | ESP32 | SX1276 | 4.2 | n/a | [14dBm](https://de.aliexpress.com/item/32872078587.html) ~ 25mW | |
+| Heltec V2 | ESP32-D0 | SX1276 | 4.2 | n/a | [19±1dBm](https://resource.heltec.cn/download/Manual%20Old/WiFi%20Lora32Manual.pdf) ~ 79mW | |
+| Heltec V3.1 | ESP32-S3 | SX1262 | 5 | n/a | [21±1dBm](https://heltec.org/project/wifi-lora-32-v3/) ~ 126mW | |
+| Heltec WST-V3 | ESP32-S3 | SX1262 | 5 | n/a | [21±1dBm](https://heltec.org/project/wireless-stick-v3/) ~ 126mW | |
 
 ## Interval Time Switching 
 
