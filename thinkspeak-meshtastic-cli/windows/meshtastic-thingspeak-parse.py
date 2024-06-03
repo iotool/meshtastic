@@ -1,13 +1,15 @@
+# https://thingspeak.com/channels/340397
+
 import json
 import datetime, time
 
 # --- Parameter ---
 
-meshnode_short_filter  = "MYPV" # monitor this short node name  
-meshnode_sec_timeout   = 30*60  # detect node is down after 30 minute without update
-thingspeak_url_apikey  = "https://api.thingspeak.com/update?api_key=XXXXXXXX" # your write key
-meshinfo_filename      = "meshtastic-thingspeak-info.txt"   # meshtastic cli output
-thingspeak_filename    = "meshtastic-thingspeak-upload.cmd" # thingspeak update
+meshnode_short_filter  = "rs1" # dRH5, R1PV, f2f8
+meshnode_sec_timeout   = 30*60
+thingspeak_url_apikey  = "https://api.thingspeak.com/update?api_key=GPU2202SLA5M2SKP"
+meshinfo_filename      = "meshtastic-thingspeak-info.txt"
+thingspeak_filename    = "meshtastic-thingspeak-upload.cmd"
 
 # ---- Parser ---
 
@@ -25,18 +27,25 @@ for meshinfo_line in meshinfo_file:
             print(meshinfo_nodes[meshinfo_nodeid]['user']['shortName'])
             if meshnode_short_filter in meshinfo_nodes[meshinfo_nodeid]['user']['shortName']:
                 print(meshinfo_nodes[meshinfo_nodeid])
-                time_last_sec = time_now_sec-meshinfo_nodes[meshinfo_nodeid]['lastHeard']
+                try:
+                    time_last_sec = time_now_sec-meshinfo_nodes[meshinfo_nodeid]['lastHeard']
+                except:
+                    time_last_sec = time_now_sec-60*60
                 try:
                     node_bat = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['batteryLevel'],2))
                     node_vlt = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['voltage'],3))
+                    node_air = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['airUtilTx'],2))
+                    node_cnu = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['channelUtilization'],2))
+                    node_snr = str(round(meshinfo_nodes[meshinfo_nodeid]['snr'],2))
                 except:
                     node_bat = "-1"
                     node_vlt = "-1"
-                node_air = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['airUtilTx'],2))
-                node_cnu = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['channelUtilization'],2))
-                node_snr = str(round(meshinfo_nodes[meshinfo_nodeid]['snr'],2))
-                node_min = str(round((time_now_sec-meshinfo_nodes[meshinfo_nodeid]['lastHeard'])/60,2))
+                    node_air = "0"
+                    node_cnu = "0"
+                    node_snr = "0"
+                node_min = str(round((time_now_sec-time_last_sec)/60,2))
                 status = meshnode_short_filter+","+meshinfo_nodes[meshinfo_nodeid]['user']['longName']+","+meshinfo_nodes[meshinfo_nodeid]['user']['id']
+                status = meshnode_short_filter+","+meshinfo_nodes[meshinfo_nodeid]['user']['id']
                 if float(node_min) > 100:
                     node_min = str(-1)
                 if time_last_sec <= meshnode_sec_timeout:
@@ -52,7 +61,7 @@ for meshinfo_line in meshinfo_file:
 
 if not meshinfo_ok:
     print("Fehler kein JSON")
-    thingspeak_file.write("echo ERROR no JSON")
+    thingspeak_file.write("echo Fehler kein JSON")
 
 meshinfo_file.close()
 thingspeak_file.close()
