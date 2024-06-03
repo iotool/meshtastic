@@ -28,9 +28,9 @@ for meshinfo_line in meshinfo_file:
             if meshnode_short_filter in meshinfo_nodes[meshinfo_nodeid]['user']['shortName']:
                 print(meshinfo_nodes[meshinfo_nodeid])
                 try:
-                    time_last_sec = time_now_sec-meshinfo_nodes[meshinfo_nodeid]['lastHeard']
+                    time_last_sec = round(time_now_sec,0)-round(meshinfo_nodes[meshinfo_nodeid]['lastHeard'],0)
                 except:
-                    time_last_sec = time_now_sec-60*60
+                    time_last_sec = 60*60
                 try:
                     node_bat = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['batteryLevel'],2))
                     node_vlt = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['voltage'],3))
@@ -45,7 +45,7 @@ for meshinfo_line in meshinfo_file:
                     node_air = "0"
                     node_cnu = "0"
                     node_snr = "0"
-                node_min = str(round((time_now_sec-time_last_sec)/60,2))
+                node_min = str(round(time_last_sec/60,2))
                 status = meshnode_short_filter+","+meshinfo_nodes[meshinfo_nodeid]['user']['longName']+","+meshinfo_nodes[meshinfo_nodeid]['user']['id']
                 status = meshnode_short_filter+","+meshinfo_nodes[meshinfo_nodeid]['user']['id']
                 if float(node_min) > 100:
