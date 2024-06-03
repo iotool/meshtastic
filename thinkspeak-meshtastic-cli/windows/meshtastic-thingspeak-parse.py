@@ -34,12 +34,14 @@ for meshinfo_line in meshinfo_file:
                 try:
                     node_bat = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['batteryLevel'],2))
                     node_vlt = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['voltage'],3))
+                except:
+                    node_bat = "-1"
+                    node_vlt = "-1"
+                try:
                     node_air = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['airUtilTx'],2))
                     node_cnu = str(round(meshinfo_nodes[meshinfo_nodeid]['deviceMetrics']['channelUtilization'],2))
                     node_snr = str(round(meshinfo_nodes[meshinfo_nodeid]['snr'],2))
                 except:
-                    node_bat = "-1"
-                    node_vlt = "-1"
                     node_air = "0"
                     node_cnu = "0"
                     node_snr = "0"
